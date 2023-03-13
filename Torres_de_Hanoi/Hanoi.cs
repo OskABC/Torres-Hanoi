@@ -32,7 +32,46 @@ namespace Torres_de_Hanoi{
         } // mover_disco
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux){
-            
+            int pred = Math.Pow(2, n) - 1;
+            Console.WriteLine("Se harán " + pred + " movimientos.");
+            double movimientos = 0;
+            if (pred % 2 == 1)
+            {
+                while (movimientos < pred)
+                {
+                    mover_disco(ini, fin);
+                    movimientos++;
+                    mover_disco(ini, aux);
+                    movimientos++;
+                    mover_disco(aux, ini);
+                    movimientos++;
+                    mover_disco(aux, fin);
+                    movimientos++;
+                    mover_disco(fin, ini);
+                    movimientos++;
+                    mover_disco(fin, aux);
+                    movimientos++;
+                } // while
+            } // if
+            else
+            {
+                while (movimientos < pred)
+                {
+                    mover_disco(ini, fin);
+                    movimientos++;
+                    mover_disco(ini, aux);
+                    movimientos++;
+                    mover_disco(aux, ini);
+                    movimientos++;
+                    mover_disco(aux, fin);
+                    movimientos++;
+                    mover_disco(fin, ini);
+                    movimientos++;
+                    mover_disco(fin, aux);
+                    movimientos++;
+                } // while
+            } // else
+            return movimientos;
         } // Iterativo
     } // Hanoi
 } // ()
